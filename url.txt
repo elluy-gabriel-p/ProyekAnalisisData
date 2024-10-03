@@ -1,1 +1,2 @@
-cloud = ""
+cloud = "https://elluy-gabriel-panambe-proyek-dicoding.streamlit.app/"
+GitHub = "https://github.com/elluy-gabriel-p/ProyekAnalisisData"
