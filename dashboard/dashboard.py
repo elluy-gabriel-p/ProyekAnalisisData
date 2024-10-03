@@ -105,14 +105,14 @@ with col2:
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(45, 25))
 colors = ["#068DA9", "#FFA07A", "#8FBC8F", "#D3D3D3", "#FFD700"]
 
-sns.barplot(x="product_count", y="product_category_name_english", data=sum_order_items_df.head(5), palette="viridis", ax=ax[0])
+sns.barplot(x="product_count", y="product_category_name_english", data=sum_order_items_df.head(5), palette="viridis", ax=ax[0], legend=False)
 ax[0].set_ylabel(None)
 ax[0].set_xlabel("Number of Sales", fontsize=80)
 ax[0].set_title("Most sold products", loc="center", fontsize=90)
 ax[0].tick_params(axis ='y', labelsize=55)
 ax[0].tick_params(axis ='x', labelsize=50)
 
-sns.barplot(x="product_count", y="product_category_name_english", data=sum_order_items_df.sort_values(by="product_count", ascending=True).head(5), palette="viridis", ax=ax[1])
+sns.barplot(x="product_count", y="product_category_name_english", data=sum_order_items_df.sort_values(by="product_count", ascending=True).head(5), palette="viridis", ax=ax[1], legend=False)
 ax[1].set_ylabel(None)
 ax[1].set_xlabel("Number of Sales", fontsize=80)
 ax[1].invert_xaxis()
@@ -136,7 +136,7 @@ with tab1:
     fig, ax = plt.subplots(figsize=(12, 6))
     sns.barplot(x=state.customer_state.value_counts().index, 
                 y=state.customer_count.values, 
-                palette=["#068DA9" if score == most_common_state else "#D3D3D3" for score in state.customer_state.value_counts().index], ax=ax)
+                palette=["#068DA9" if score == most_common_state else "#D3D3D3" for score in state.customer_state.value_counts().index], ax=ax, legend=False)
     ax.set_title("Number of Customers by State", fontsize=15)
     st.pyplot(fig)
 
@@ -146,7 +146,7 @@ with tab2:
 
     fig, ax = plt.subplots(figsize=(12, 6))
     sns.barplot(x=order_status.index, y=order_status.values, 
-                palette=["#068DA9" if score == common_status else "#D3D3D3" for score in order_status.index], ax=ax)
+                palette=["#068DA9" if score == common_status else "#D3D3D3" for score in order_status.index], ax=ax, legend=False)
     ax.set_title("Order Status Distribution", fontsize=15)
     st.pyplot(fig)
 
@@ -178,13 +178,13 @@ colors = ["#90CAF9"] * 5
 # Shorten customer IDs for display
 rfm_df['short_customer_id'] = rfm_df['customer_id'].astype(str).str[-5:]  # Keep only last 5 digits
 
-sns.barplot(y="Recency", x="short_customer_id", data=rfm_df.sort_values(by="Recency").head(5), palette=colors, ax=ax[0])
+sns.barplot(y="Recency", x="short_customer_id", data=rfm_df.sort_values(by="Recency").head(5), palette=colors, ax=ax[0], legend=False)
 ax[0].set_title("Top 5 by Recency", fontsize=15)
 
-sns.barplot(y="Frequency", x="short_customer_id", data=rfm_df.sort_values(by="Frequency", ascending=False).head(5), palette=colors, ax=ax[1])
+sns.barplot(y="Frequency", x="short_customer_id", data=rfm_df.sort_values(by="Frequency", ascending=False).head(5), palette=colors, ax=ax[1], legend=False)
 ax[1].set_title("Top 5 by Frequency", fontsize=15)
 
-sns.barplot(y="Monetary", x="short_customer_id", data=rfm_df.sort_values(by="Monetary", ascending=False).head(5), palette=colors, ax=ax[2])
+sns.barplot(y="Monetary", x="short_customer_id", data=rfm_df.sort_values(by="Monetary", ascending=False).head(5), palette=colors, ax=ax[2], legend=False)
 ax[2].set_title("Top 5 by Monetary", fontsize=15)
 
 st.pyplot(fig)
