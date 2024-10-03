@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+scipy
+streamlit
+seaborn
+Babel
+urllib3
+unidecode
