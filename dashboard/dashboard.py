@@ -8,7 +8,7 @@ from babel.numbers import format_currency
 from func import DataAnalyzer, BrazilMapPlotter
 
 sns.set(style='darkgrid')
-st.set_option('deprecation.showPyplotGlobalUse', False)
+# st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Dataset
 datetime_cols = ["order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date", "order_estimated_delivery_date", "order_purchase_timestamp", "shipping_limit_date"]
