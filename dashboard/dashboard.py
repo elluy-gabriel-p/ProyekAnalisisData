@@ -12,12 +12,12 @@ sns.set(style='darkgrid')
 
 # Dataset
 datetime_cols = ["order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date", "order_estimated_delivery_date", "order_purchase_timestamp", "shipping_limit_date"]
-all_df = pd.read_csv("main_data.csv")
+all_df = pd.read_csv("https://raw.githubusercontent.com/elluy-gabriel-p/ProyekAnalisisData/refs/heads/main/dashboard/main_data.csv")
 all_df.sort_values(by="order_approved_at", inplace=True)
 all_df.reset_index(inplace=True)
 
 # Geolocation Dataset
-geolocation = pd.read_csv('geolocation.csv')
+geolocation = pd.read_csv('https://raw.githubusercontent.com/elluy-gabriel-p/ProyekAnalisisData/refs/heads/main/dashboard/geolocation.csv')
 data = geolocation.drop_duplicates(subset='customer_unique_id')
 
 for col in datetime_cols:
@@ -32,7 +32,7 @@ with st.sidebar:
     st.title("Elluy Gabriel Panambe")
     
     # Menambahkan logo perusahaan
-    st.image("streamlit-seeklogo.svg", width=200)
+    st.image("https://raw.githubusercontent.com/elluy-gabriel-p/ProyekAnalisisData/refs/heads/main/dashboard/streamlit-seeklogo.svg", width=200)
     
     # Informasi tanggal
     st.write(f"Data from: **{min_date.date()}** to **{max_date.date()}**")
