@@ -32,7 +32,7 @@ with st.sidebar:
     st.title("Elluy Gabriel Panambe")
     
     # Menambahkan logo perusahaan
-    st.image("streamlit-seeklogo.svg", width=200)
+    st.image("dashboard/streamlit-seeklogo.svg", width=200)
     
     # Informasi tanggal
     st.write(f"Data from: **{min_date.date()}** to **{max_date.date()}**")
